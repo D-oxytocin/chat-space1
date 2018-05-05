@@ -7,7 +7,6 @@
 |password|strings|unique: true|
 |password_confirmation|strings|
 |timestamps|
-
 ### Asociation
 - has_many :messages
 - has_many :menbers
@@ -21,7 +20,6 @@
 |user_id|references|
 |group_ide|references|
 |timestamps|
-
 ### Asociation
 - belongs_to :user
 - belongs_to :group
@@ -30,7 +28,6 @@
 |Column|Type|Option|
 |------|----|------|
 |group_name|strings|null: false|
-
 ### Asociation
 - has_many :messages
 - has_many :menbers: :group_users
@@ -42,7 +39,6 @@
 |------|----|------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-
 ### Asociation
 - belongs_to :group
 - belongs_to :user
