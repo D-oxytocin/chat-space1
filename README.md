@@ -1,5 +1,4 @@
 ## usersテーブル
-
 |Column|Type|Option|
 |------|----|------|
 |name|strings|null: false|
