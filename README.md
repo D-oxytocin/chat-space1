@@ -5,21 +5,19 @@
 |email|strings|null: false, unique: true|
 |password|strings|unique: true|
 |password_confirmation|strings|
-|timestamps|
 
 ### Asociation
 - has_many :messages
 - has_many :members
-- has_many :groups through: :members
+- has_many :groups, through: :members
 
 ## messagesテーブル
 |Column|Type|Option|
 |------|----|------|
 |bady|text|
 |image|string|
-|user_id|references|
-|group_id|references|
-|timestamps|
+|user_id|references|foreign_key: true|
+|group_id|references|foreign_key: true|
 
 ### Asociation
 - belongs_to :user
@@ -28,12 +26,12 @@
 ## groupsテーブル
 |Column|Type|Option|
 |------|----|------|
-|group_name|strings|index: true, null: false|
+|name|strings|index: true, null: false|
 ### Asociation
 
 - has_many :messages
 - has_many :mebmers
-- belongs_to :users through: :members
+- belongs_to :users, through: :members
 
 ## menbersテーブル
 |Column|Type|Option|
