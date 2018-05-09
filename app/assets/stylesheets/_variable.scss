@@ -8,7 +8,7 @@
 $side_bar--width: 300px;
 
 // main_content__chat_spaceの高さを出すために他要素の高さを取得
-$notification--height: 34px;
+$notification--height: 28px;
 $main_content__head--height: 100px;
 $main_content__footer--height: 90px;
 $main_content__chat_space--height: calc(100vh - (#{$notification--height} + #{$main_content__head--height} + #{$main_content__footer--height}));
