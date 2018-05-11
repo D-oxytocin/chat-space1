@@ -5,18 +5,18 @@
   box-sizing: border-box;
 
   &__user_name {
-	  color: #FFFFFF;
+    color: #FFFFFF;
     font-size: 16px;
-	  font-weight: bold;
-	  float: left;
+    font-weight: bold;
+    float: left;
   }
 
   &__icon_setting {
-	  @include side_bar_icon_setting();
-	  padding-right: 5px;
-	}
+    @include side_bar_icon_setting();
+    padding-right: 5px;
+  }
 
   &__icon_new_message {
-	  @include side_bar_icon_setting();
+    @include side_bar_icon_setting();
   }
 }
