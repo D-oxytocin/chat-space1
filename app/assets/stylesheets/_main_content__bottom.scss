@@ -1,0 +1,26 @@
+.main_content__bottom {
+  height: $main_content__footer--height;
+  background-color: #AAAAAA;
+  box-sizing: border-box;
+  padding: 20px 40px;
+  position:relative;
+
+  &__form {
+    height: 50px;
+
+    &__send_button {
+      width: $main_content__footer__form__send_button--width;
+      text-align: center;
+      line-height: 50px;
+      float: right;
+      background-color: $primary;
+      color: $text--main_color;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+    }
+  }
+}
