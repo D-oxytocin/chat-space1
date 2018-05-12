@@ -1,5 +1,7 @@
 .side_bar__bottom
-  .side_bar__bottom__group_name
-    Exsample
-  .side_bar__bottom__latest_message
-    Exsample message
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      .group__name
+        = group.name
+      .group__message
+        メッセージはまだありません。
