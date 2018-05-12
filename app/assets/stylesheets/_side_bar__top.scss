@@ -11,12 +11,12 @@
     float: left;
   }
 
+  &__icon_new_message {
+    @include side_bar_icon_setting();
+  }
+
   &__icon_setting {
     @include side_bar_icon_setting();
     padding-right: 5px;
-  }
-
-  &__icon_new_message {
-    @include side_bar_icon_setting();
   }
 }

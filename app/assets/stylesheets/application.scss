@@ -2,7 +2,6 @@
 @import "./variable";
 @import "./font-awesome";
 @import "./notification";
-@import "./flash";
 @import "./main_wrapper";
 @import "./side_bars";
 @import "./side_bar__top";
@@ -11,4 +10,7 @@
 @import "./main_contents";
 @import "./main_content__chat_space";
 @import "./main_content__bottom";
-@import "./user";
+@import "./config/colors";
+@import "./modules/flash";
+@import "./users";
+
