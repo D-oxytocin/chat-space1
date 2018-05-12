@@ -33,7 +33,7 @@
 - has_many :mebmers
 - belongs_to :users, through: :members
 
-## menbersテーブル
+## membersテーブル
 |Column|Type|Option|
 |------|----|------|
 |user_id|integer|index: true, null: false, foreign_key: true|
