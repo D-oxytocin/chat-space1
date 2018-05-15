@@ -1,10 +1,25 @@
-.main_wrapper
-  .notification
-    チャットグループが作成されました
-  .side_bars
-    = render 'shared/side_bar__top'
-    = render 'shared/side_bar__bottom'
-  .main_contents
-    = render 'shared/main_content__top'
-    = render 'shared/main_content__chat_space'
-    = render 'shared/main_content__bottom'
+%body
+  %header
+    %div チャットグループが作成されました
+  .side-bar
+    = render "shared/side_bar"
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          = @group.name
+        .left-header__members
+          .member
+            = current_user.name
+      .right-header
+        .right-header__button edit
+    .messages
+      = render @messages
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
