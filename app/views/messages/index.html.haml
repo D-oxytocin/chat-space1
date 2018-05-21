@@ -10,9 +10,11 @@
           = @group.name
         .left-header__members
           .member
+            Member :
             = current_user.name
       .right-header
-        .right-header__button edit
+        .right-header__button
+        = link_to "Edit", edit_group_path(@group),class: "right-header__button"
     .messages
       = render @messages
     .form
