@@ -73,7 +73,7 @@ function appendUserResult(userId, userName) {
     $(this).parent().remove();
   });
 
-  $("#chat-group-users").on("click",".chat-group-user__btn--remove", function(){
+  $("#chat-group-users").on("click", ".chat-group-user__btn--remove", function(){
     $(this).parent().remove();
   });
 });
