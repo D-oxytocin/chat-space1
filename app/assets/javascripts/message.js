@@ -1,17 +1,17 @@
 $(function(){
   var interval = setInterval(function() {
   var messageId = $('.message:last').data('message-id');
-    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
-      $.ajax({
-        url: location.href,
-        type: 'GET',
-        data: { id: messageId },
-        dataType: 'json',
-      })
+  if (location.pathname.match(/\/groups\/\d+\/messages/)) {
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: { id: messageId },
+      dataType: 'json',
+    })
     .done(function(json){
       var insertHTML = '';
       json.messages.forEach(function(message){
-          insertHTML += buildHTML(message);
+        insertHTML += buildHTML(message);
       });
       $('.messages').prepend(insertHTML);
     })
@@ -44,7 +44,7 @@ $(function(){
            ${image}
          </div>
        </div>`
-    return html
+    return html;
   }
 
   $('#new_message').on('submit', function(e){
