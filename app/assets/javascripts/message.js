@@ -9,9 +9,12 @@ $(function(){
       dataType: 'json',
     })
     .done(function(json){
+      var id = $('.chat').data('messageId');
       var insertHTML = '';
       json.messages.forEach(function(message){
+        if (message.id > id ) {
         insertHTML += buildHTML(message);
+        }
       });
       $('.messages').prepend(insertHTML);
     })
