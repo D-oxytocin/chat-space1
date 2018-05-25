@@ -9,14 +9,14 @@ $(function(){
       dataType: 'json',
     })
     .done(function(json){
-      var id = $('.chat').data('messageId');
       var insertHTML = '';
       json.messages.forEach(function(message){
-        if (message.id > id ) {
+        if (message.id > messageId) {
         insertHTML += buildHTML(message);
         }
       });
-      $('.messages').prepend(insertHTML);
+      $('.messages').append(insertHTML);
+      $('.messages').animate({ scrollTop: $('.messages').get(0).scrollHeight },'slow');
     })
     .fail(function(data){
       alert('自動更新に失敗しました');
