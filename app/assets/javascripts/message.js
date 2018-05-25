@@ -1,11 +1,34 @@
 $(function(){
+  var interval = setInterval(function() {
+  var messageId = $('.message:last').data('message-id');
+    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
+      $.ajax({
+        url: location.href,
+        type: 'GET',
+        data: { id: messageId },
+        dataType: 'json',
+      })
+    .done(function(json){
+      var insertHTML = '';
+      json.messages.forEach(function(message){
+          insertHTML += buildHTML(message);
+      });
+      $('.messages').prepend(insertHTML);
+    })
+    .fail(function(data){
+      alert('自動更新に失敗しました');
+    });
+  } else {
+    clearInterval(interval);
+  }} , 5000 );
+
   function buildHTML(message){
     var image = ""
     if (message.image != null) {
       image = `<img src = ${message.image} class='lower-message__image' height= "150">`
     }
     var html =
-      `<div class="message">
+      `<div class="message" data-message-id="${message.id}">
          <div class="upper-message">
            <div class="upper-message__user-name">
              ${message.user_name}
@@ -21,8 +44,9 @@ $(function(){
            ${image}
          </div>
        </div>`
-    return html;
+    return html
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
